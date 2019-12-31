@@ -51,10 +51,7 @@ def getArrFare():
                     fithty_dep_price = '完售'
                 dep_date = dep_js['Result']['Data']['AvailabilityDates'][i]['Date']
                 print ('無行李:' + str(without_dep_price),'15kg行李:'+str(fithty_dep_price),dep_date)
-            except:
-                break
-                print('查詢完畢')
-            try:
+                
                 #行程二（晚回） 21:40 PUS-> 23:50 TPE
                 DepTime = ret_js['Result']['Data']['AvailabilityDates'][i]['Availability'][0]['FlightSegment']['DepTime']
                 if DepTime == "21:40":
@@ -106,5 +103,5 @@ def getArrFare_Cheapest():
             dep_date = dep_js['Result']['Data']['AvailabilityDates'][i]['Date']
             print(math.ceil(dep_price),dep_date)
 
-getArrFare()
-#getArrFare_Cheapest()
+#getArrFare()
+getArrFare_Cheapest()
